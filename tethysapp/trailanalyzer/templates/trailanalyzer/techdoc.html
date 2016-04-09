@@ -1,0 +1,48 @@
+{% extends "trailanalyzer/base.html" %}
+{% load staticfiles %}
+{% block app_navigation_items %}
+  <li class="title">App Navigation</li>
+  <li class><a href="{% url 'trailanalyzer:home' %}">Home</a></li>
+<li><a href="{% url 'trailanalyzer:map' %}">Map</a></li>
+<li><a href="{% url 'trailanalyzer:Video' %}">EXPERIENCE UTAH!</a></li>
+<li><a href="{% url 'trailanalyzer:Help' %}">Help</a></li>
+  <li class="active"><a href="{% url 'trailanalyzer:techdoc' %}">Technical Documentation</a></li>
+{% endblock %}
+
+{% block app_content %}
+  <h1>Technical Specifications</h1>
+  <p>This page was built by Jordan Frustaci and Alex Arndt under the direction of Sarva Pulla and Dan Ames.
+  It was developed in a Linux Virtual Machine as has been show to work properly in the Mozilla Firefox browser.</p>
+  <h3>License and access</h3>
+  <p>This site is published under a Creative Commons Attribution 4.0 International License and is freely avaialable for use online.
+    This site is hosted on the BYU Tethys Geoserver.</p>
+  <h3>Hardware/software limitations</h3>
+  <p>This site should work on all internet browsers, but has only been tested in Mozilla Firefox 45.0.1
+    It is best to run this site with a computer with 64-bit operating system and at least 8 GB of RAM </p>
+  <h3>Source code availability</h3>
+  <p>The source code for this site is available from Jordan Frustaci (jordanfrustaci@yahoo.com) and Alex Arndt (arndtal@gmail.com)</p>
+  <h1>Software Design</h1>
+  <h3>Purpose</h3>
+  <p>The pupose of this software is to provide a open access website for outdoor adventure seekers in Utah to be able to plan our hiking trips</p>
+  <h2>Structure</h2>
+   <img src="/static/trailanalyzer/images/flowchart33.JPG" alt="Line Buttons Example" style="width:600px;height:300px;">
+  <h3>Main Files</h3>
+  <p>There are 6 main files that are used to build this website.  base.html, Help.html, home.html, map.html, techdoc.html, Video.html.  Each of these files build a new page that contains different data the user can interact with.  the only exception is base.html whis designs the format for which all the pages are based off of.</p>
+  <h3>Key Classes and Functions</h3>
+  <p>The main function used to calculate the elevations and plot the graph is based off a geoprocessing model from ArcGIS.  The tool used is called Stack Profile</p>
+    <img src="/static/trailanalyzer/images/model.JPG" alt="Line Buttons Example" style="width:600px;height:300px;">
+  <h3>Main user interface elements</h3>
+  <p>The Main user interface elements are quite simple.  On the left side of the pages is the app navigation which is shown below.  The navigation toolbar is develped in the workspaces app.py and controllers.py and an image of this can be seen below.</p>
+    <center><img src="https://lh3.googleusercontent.com/9BMr2Qt1oZ6DbAPYA1cfR_BhF7bnHMVu5vMLX2NUK6EMR4mVcgV1xiXlikjDSmx3qbJFa4c=s85" HEIGHT = "200" WIDTH="200" BORDER = "0" alt="structure image goes here"></center>
+  <p>Another interface elements include the home page where the user is greeted to the website.</p>
+ <img src="/static/trailanalyzer/images/homepage.JPG" alt="Line Buttons Example" style="width:600px;height:300px;">
+  <p>Here is an example of the map page where the user draws either a polyline or a freehand polyline</p>
+    <img src="/static/trailanalyzer/images/mappage.JPG" alt="Line Buttons Example" style="width:600px;height:300px;">
+  <p>Here is an example of the video page which allows the user to learn more about which areas of utah they could be interested in visiting.</p>
+    <img src="/static/trailanalyzer/images/videopage.JPG" alt="Line Buttons Example" style="width:600px;height:300px;">
+{% endblock %}
+
+{% block app_actions %}
+  <a href="" class="btn btn-default">Next</a>
+  <a href="" class="btn btn-default">Back</a>
+{% endblock %}

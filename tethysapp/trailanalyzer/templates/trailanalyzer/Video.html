@@ -1,0 +1,101 @@
+<!--This "extends" tag means that you are going to build this html file based on base.html.
+Any blocks in base.html like the sidebar and footer will appear in this page without you having to re-write them here. -->
+
+{% extends "trailanalyzer/base.html" %}
+
+{% block app_navigation_items %}
+  <li class="title">App Navigation</li>
+  <li class><a href="{% url 'trailanalyzer:home' %}">Home</a></li>
+<li><a href="{% url 'trailanalyzer:map' %}">Map</a></li>
+ <li class="active"><a href="{% url 'trailanalyzer:Video' %}">EXPERIENCE UTAH!</a></li>
+<li><a href="{% url 'trailanalyzer:Help' %}">Help</a></li>
+<li><a href="{% url 'trailanalyzer:techdoc' %}">Technical Documentation</a></li>
+
+
+{% endblock %}
+
+<!-- use this block "app_content" for the main stuff you want in the
+main part of your web page. Pretty much any sample code you see online
+for other web sites can go in this block.-->
+
+{% block app_content %}
+
+    <!-- This is a simple html page demonstrating adding a map to a page -->
+    <!-- The style sheet here has some of the map styling for zooming buttons, etc. -->
+
+
+    <!-- This extra bit of style defines the size of the "map" div tag area that shows up later -->
+    <style>
+      .video_box {
+        height: 600px;
+        width: 50%;
+        float:left;
+      }
+        .info_box{
+        float:right;
+        height: 600px;
+        width: 45%;
+        vertical-align: middle;
+        border:2px solid black;
+        position:static;
+        float:center;
+        width:50%;
+        height:100%;
+        text-align:center;
+
+       }
+    </style>
+
+
+
+
+  	<!-- Show some information to the user using basic HTML -->
+    <h2>EXPERIENCE THE NATURAL BEAUTY OF UTAH!</h2>
+<div align="center">
+      <form>
+            <select id="selector" onChange="setGame(this.value)">
+            	<option value="none">(Choose a Video)</option>
+                <option value="utah">Utah-Life Elevated</option>
+                <option value="oregonlv">Experience The Mighty 5: Utah's National Parks </option>
+                 <option value="lastvideo">Utah (USA) Vacation Travel Video Guide  </option>
+
+            </select>
+        </form>
+    </div>
+<br/>
+    <!-- Specify a div tag area that will hold the map itself. -->
+<div id="main">
+    <div><iframe class="video_box" id="video_box" frameborder="20" allowfullscreen></iframe></div>
+    <div class="info_box" id="info_box" scrolling="yes" </div>
+</div>
+    <!-- Write the JavaScript code to build your map. -->
+    <script type="text/javascript">
+    document.getElementById("info_box").innerHTML = "A commercial for utah, showing alot of the things there are to do there.";
+    document.getElementById("video_box").src="https://www.youtube.com/embed/dydQrO4LG3k";
+
+    function setGame(Crap){
+    var selected=document.getElementById("selector");
+    if(selected[selected.selectedIndex].value=="utah"){
+         document.getElementById("info_box").innerHTML ="Far more than just a state. Utah is a state of mind. Sculpted by wind, water and time, Utah's landscape is the perfect canvas for your next adventure. From The Mighty 5™ National Parks, Arches, Bryce Canyon, Canyonlands, Capitol Reef and Zion to the Wasatch Mountain's Greatest Snow on Earth®, and all points in-between, Utah is the place where memories are made and experiences forged.";
+         document.getElementById("video_box").src="https://www.youtube.com/embed/6EAKZ92dXP4";
+         }
+     if(selected[selected.selectedIndex].value=="oregonlv"){
+         document.getElementById("info_box").innerHTML = "Experience The Mighty 5™....Utah's Five National Parks. Five iconic national parks within easy distance of one another equals one epic bucket list adventure. Whether you're looking for memorable family fun, an adrenaline rush, or the solace of nature, you'll find it all in Utah's Mighty5™ national parks.";
+         document.getElementById("video_box").src="https://www.youtube.com/embed/QlKOcyf915M" ;
+         }
+     if(selected[selected.selectedIndex].value=="lastvideo"){
+         document.getElementById("info_box").innerHTML = "Travel video about destination Utah in USA. The State of Utah is located in the south west of the United States of America is a land of endless horizons, canyons, deserts and big open spaces. What Mecca is to the Moslems and Rome is to the Catholics is what Salt Lake City is to the Mormons. It is also the capital of the U.S. federal state of Utah. The prosperous city also contains many of those of other faiths but the highly influential Mormon church makes most of the region’s political decisions. The administrative HQ of the world wide active Mormon church is, at a hundred and twenty eight metres high, the city’s tallest building. The religion’s financial might and strict administration still exist today. Each member has to contribute one tenth of his or her income thus the Council Of The Twelve Apostles and the church presidency are a wealthy multinational concern. The Bonneville Salt Flats are located next to Great Salt Lake, a huge area covered by salt that is one of the flattest areas in the world. The lake was once used for motor sports and on the Salt Flats racing drivers in rocket-shaped cars attempted to beat one land speed record after the other. Zion National Park is not only a place of natural history as signs of human habitation have also been discovered here. Several of the park’s archaeological sites indicate that Man inhabited this region more than two thousand years ago. It is believed that its earliest prehistoric inhabitants were the legendary Anasazi Indians, followed by the Paiute Tribe. This land of red rock, the Great Salt Lake and remarkable canyons is a wonderful world at the edge of civilisation created by the might of natural forces. A desert land where water is vital and the supply of which is now assured by modern technology. All this is Utah, a dream world of deep canyons and vast open spaces";
+         document.getElementById("video_box").src="https://www.youtube.com/embed/Qjdq1molSfM" ;
+         }
+
+     }
+
+
+
+    </script>
+
+
+{% endblock %}
+
+
+

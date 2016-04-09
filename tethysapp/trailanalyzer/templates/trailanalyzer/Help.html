@@ -1,0 +1,57 @@
+{% extends "trailanalyzer/base.html" %}
+
+{% block app_navigation_items %}
+  <li class="title">App Navigation</li>
+  <li class><a href="{% url 'trailanalyzer:home' %}">Home</a></li>
+<li><a href="{% url 'trailanalyzer:map' %}">Map</a></li>
+<li><a href="{% url 'trailanalyzer:Video' %}">EXPERIENCE UTAH!</a></li>
+  <li class="active"><a href="{% url 'trailanalyzer:Help' %}">Help</a></li>
+<li><a href="{% url 'trailanalyzer:techdoc' %}">Technical Documentation</a></li>
+{% endblock %}
+
+{% block app_content %}
+ <h1>HELP</h1>
+  <p>The purpose of this page is meant to be a place where users can find valuable information regarding the webiste. This section contains
+  the purpose of the webiste, required software, restrictions of the website, the license, the different features of the website,
+    how to use the map page, and how to use the EXPERIENCE UTAH! page.</p>
+<h2>Purpose</h2>
+  <p>The purpose of this website is to help hikers and bikers determine the level of difficulty and difference in elevation
+  change for their desired paths.This website was created as part of a class project for the Geospatial Software Development
+    class taught at Brigham Young University in the Civil and Environmental Engineering Department.</p>
+
+<h2>Required Software</h2>
+  <p>This website requires an internet browser to run. To create the website, ArcMap 10 was needed to create the model. PyCharm was needed to write the script and code.</p>
+<h2>Restrictions</h2>
+  <p>This website only contains elevation data for the state of Utah. As such, the user is only able to find plot the elevation changes for polylines drawn in the state of Utah.</p>
+<h2>License</h2>
+  <p>Utah Trail Analyzer by Jordan Frustaci and Alex Arndt is licensed under a Creative Commons Attribution 4.0 International License.</p>
+<h2>Website Features</h2>
+  <p>This website contains many interseting features for those wanting to experience Utah's great outdoors. The home page introduces the user to the
+  website and explains what is included. The Map page shows a map of Utah. This map page allows the user to draw a polyline or freehand polyline. This polyline is then used to determine
+  the elevation profile in that part of Utah. Based on the changes in evelation, that trail is then assigned a level of difficulty. The different levels from easiest to most difficult are Baby, Easy, Novice,
+  Intermediate, Advanced, Expert, and INSANITY! This website also contains a page that shows different videos that help showcase some of the beautiful outdoors of Utah. There is also a help page, and a technical documentation page.</p>
+<h2>How to use the Map Page</h2>
+  <p>To access this page of the website, the user must click on the "Map" Tab. This should bring up a page which has a map that is centered on Utah. There should also a be a border. This border
+  shows the places where the user is able to plot elevation profiles. There should be two options to draw polylines.
+<p>The first option is the "Polyline" option.
+  To use this option, the user must first click on the word "Polyline." Then, the user must click where they want to start the trail.
+    The user keeps clicking until they reach the end point of the trail. Once they reach the end point, the user double clicks.
+    This should then bring up a text box which will display the level of difficulty of the trail. Once the user has read this text box, the user then
+    clicks OK. This will then bring up the elevation profile of the trail below the map. </p>
+<p> If the user decides to use the "Freehand Polyline" option, it is still fairly similar to the "Polyline" option, but there are some differences.
+In this case, the user will left click and hold the click and draw the polyline until it is finished. Once the polyline is to the user's liking, the user will
+then let go of the left click. Similar to before, a popup will appear that will display the difficulty of the trail. After the user clicks OK, the elevation profile will appear below the map.</p>
+  </p>
+<p>In both cases, the user can then print a copy of the elevation profile in whichever manner they would like. Afte the elevation is plotted, the user then must
+press the the button in the upper right corner of the elevation profile. This will open a drop down menu. If the user would like to print the profile, the user should choose
+"Print Chart." If the user would like to download the chart into a different file format, there is also that option. There is the option to download
+the chart as a PNG image, a JPEG image, a PDF document, and as a SVG Vector image. To download the chart, the user must simply just click on the desired option.</p>
+<h2>How to use the EXPERIENCE UTAH! page</h2>
+  <p>The "EXPERIENCE UTAH!" page is meant to offer the user a place where they can see some of the beatiful natural wonders Utah has to offer. To use this page, the user simply uses the drop down menu to select the video they would like to view. Once they have selcted the video, the video will appear on the left, and a description of the video will appear on the right.</p>
+{% endblock %}
+
+
+{% block app_actions %}
+  <a href="" class="btn btn-default">Next</a>
+  <a href="" class="btn btn-default">Back</a>
+{% endblock %}
